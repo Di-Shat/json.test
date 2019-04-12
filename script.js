@@ -1,19 +1,19 @@
 function loadData(url){
- return new Promise(
-    function(resolve,reject){
-      const request = new XMLHttpRequest()
-      request.open('GET','Data.json')
+	return new Promise(
+		function(resolve,reject){
+			const request = new XMLHttpRequest()
+			request.open('GET',url)
 
-    request.onreadystatechange = function(event){
-	  event.target.readyState === 4 ? 
-	    event.target.status === 200 ? 
-	      reject(event.target.statusText) : null
-    }
-		request.send()
-   }
- )
+			request.onreadystatechange = function(event){
+				event.target.readyState === 4 ? 
+					event.target.status === 200 ? 													resolve(event.target.responseText) :
+	 					reject(event.target.statusText) : null  
+			}
+			request.send()
+		}
+	)
 }
-loadData('Data.json').then(
+loadData('data.json').then(
 	response => JSON.parse(response).forEach(
 			picture => document.body.appendChild(
 				document.createElement('img')).src = picture.url
@@ -26,10 +26,9 @@ loadData('message.txt').then(
 	)
 loadData('index.html').then(
 	response => document.body.appendChild(
-	       document.createElement('pre')).innerText = response
+		document.createElement('pre')).innerText = response
 	)
-	loadData('script,js').then(
-			response => document.body.appendChild(
-					document.createElement(('pre')).innerText = response
-				)
-		)
+loadData('script.js').then(
+	response => document.body.appendChild(
+		document.createElement('pre')).innerText = response	
+	)
