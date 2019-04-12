@@ -28,4 +28,8 @@ loadData('index.html').then(
 	response => document.body.appendChild(
 	       document.createElement('pre')).innerText = response
 	)
-	
+	loadData('script,js').then(
+			response => document.body.appendChild(
+					document.createElement(('pre')).innerText = response
+				)
+		)
