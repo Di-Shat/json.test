@@ -11,6 +11,8 @@ fetch('Data.json')
 		.then(
 			response => response.text()
 			.then( response =>
-				document.body.appendChild(document.createElement('p')).innerText = response
+				document.cookie = `message=${response}`
 			)
 		)
+	document.body.appendChild(document.createElement('p')).innerText = document.cookie
+	
