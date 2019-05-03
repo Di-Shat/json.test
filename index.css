@@ -1,11 +1,11 @@
-img{
-	height: 100px;
-	margin: 20px;
+img {
+		height: 100px;
+		margin: 20px;
 }
-pre{
-padding: 10px 20px;
-border: inset 1px;
+pre {
+		padding: 10px 20px;
+		border: inset 1px;
 }
 p {
-	color: green;
+		color: green;
 }
